@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {
+  MuiThemeProvider,
+} from '@material-ui/core/styles';
+import AppContainer from './App/components/ModuleRoot';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux'
+import store from './store';
+import NavBar from './App/components/NavBar';
+import theme from './theme';
+import './index.css';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <MuiThemeProvider theme={theme}>
+        <NavBar />
+        <AppContainer />
+      </MuiThemeProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
