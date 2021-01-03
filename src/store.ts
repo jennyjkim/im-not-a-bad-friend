@@ -15,7 +15,7 @@ const reducers = {
     app: appReducer,
     home: homeReducer,
     settings: settingsReducer,
-}
+};
 const combined = combineReducers(reducers);
 
 let middlewares: Middleware[] = [thunk]
